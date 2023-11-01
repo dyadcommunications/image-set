@@ -1,0 +1,94 @@
+/* ===== BLOCK STYLES ====== */
+.image-set {
+	margin: var(--margin-top, 0) auto 0;
+}
+.image-set img {
+	display: block;
+	width: 100%;
+}
+.is-even .image-set img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	font-family: "object-fit: cover;";
+}
+.image-set .wp-block {
+	flex: 1 1 0;
+	flex: var(--ratio, 1) 1 0;
+}
+.image-set .image-set-innerblock {
+	width: 100%;
+}
+.image-set .image-set-innerblock > * {
+	margin-top: var(--image-set-gap, 0);
+}
+.image-set-innerblock .dyad-image:not(:first-child),
+.image-set-innerblock .acf-notify:not(:first-child) {
+	margin-left: 1%;
+}
+.image-set .dyad-image {
+	flex: 1 1 0;
+	flex: var(--ratio, 1) 1 0;
+}
+.image-set.is-even .wp-block,
+.image-set.is-even .wp-block-acf-dyad-image,
+.image-set.is-even .dyad-image {
+	flex: 1 1 0;
+}
+@media screen and (min-width: 768px) {
+	.image-set .image-set-innerblock {
+		display: flex;
+		align-items: stretch;
+	}
+	.image-set .image-set-innerblock .wp-block:not(:first-child) {
+		margin-left: 1em;
+	}
+	.image-set .image-set-innerblock > * {
+		margin-top: 0;
+	}
+}
+.image-set-innerblock .dyad-image .ratio {
+	width: 100%;
+	position: relative;
+	padding: 0;
+	padding-top: var(--padding, 100%);
+	padding-top: var(--row-padding, var(--padding, 100%));
+}
+.image-set-innerblock .wp-block .acf-block-preview:only-child .ratio {
+	padding-top: var(--row-padding, var(--padding, 40%));
+}
+.image-set-innerblock:has(.acf-block-preview:nth-child(n + 3):last-child) .acf-block-preview .ratio {
+	padding-top: var(--row-padding, var(--padding, 130%));
+}
+
+/* ===== CMS/WORDPRESS-SPECIFIC STYLES ====== */
+#editor .image-set {
+	margin-bottom: 1rem;
+	padding: 0.6rem;
+}
+#editor .image-set:hover {
+	outline: 1px dotted;
+}
+#editor .image-set.is-even .image-set-innerblock::after {
+	content: "Image Set: Even";
+}
+#editor .image-set .image-set-innerblock::after {
+	display: none;
+	content: "Image Set: Natural";
+	position: absolute;
+	top: auto;
+	right: auto;
+	bottom: 4px;
+	left: 0;
+	background-color: #ddd;
+	color: #000;
+	font-size: 8px;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 0.25em;
+	padding: 4px 8px;
+}
+#editor .is-selected .image-set .image-set-innerblock::after,
+#editor .image-set:hover .image-set-innerblock::after {
+	display: block;
+}

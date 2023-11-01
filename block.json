@@ -1,0 +1,19 @@
+{
+	"name": "acf/image-set",
+	"title": "Image Set",
+	"description": "A custom image-set block.",
+	"style": ["file:./image-set.css"],
+	"providesContext": { "acf/fields": "data" },
+	"category": "formatting",
+	"icon": "layout",
+	"keywords": ["images", "row", "set"],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "image-set.php"
+	},
+	"align": "full",
+	"supports": {
+		"anchor": true,
+		"jsx": true
+	}
+}
